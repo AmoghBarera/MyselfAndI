@@ -1,0 +1,54 @@
+import {
+  Code2,
+  ServerCog,
+  LayoutDashboard,
+  Database,
+  BarChart3,
+  LineChart,
+  Medal,
+  GraduationCap,
+  BrainCircuit,
+  ShieldCheck,
+  Crown,
+  Flag,
+  Volleyball,
+  Activity,
+  Trophy,
+  Mail,
+  Phone,
+  Linkedin,
+  Github,
+  Globe,
+  MapPin,
+  type LucideIcon,
+} from "lucide-react";
+
+// Central icon registry so data files can reference icons by string name.
+// Add new mappings here as needed.
+export const iconMap: Record<string, LucideIcon> = {
+  Code2,
+  ServerCog,
+  LayoutDashboard,
+  Database,
+  BarChart3,
+  LineChart,
+  Medal,
+  GraduationCap,
+  BrainCircuit,
+  ShieldCheck,
+  Crown,
+  Flag,
+  Volleyball,
+  Activity,
+  Trophy,
+  Mail,
+  Phone,
+  Linkedin,
+  Github,
+  Globe,
+  MapPin,
+};
+
+export function getIcon(name: string): LucideIcon {
+  return iconMap[name] ?? Code2;
+}
