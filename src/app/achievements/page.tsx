@@ -6,6 +6,7 @@ import { ArrowUpRight, Award, BadgeCheck, Trophy } from "lucide-react";
 import { dataService } from "@/lib/data-service";
 import { getIcon } from "@/lib/icons";
 import { Reveal, Stagger, StaggerItem } from "@/components/animations/motion";
+import { AnimatedHeading } from "@/components/site/animated-heading";
 
 export default function AchievementsPage() {
   const academic = dataService.getAcademicAchievements();
@@ -50,9 +51,12 @@ export default function AchievementsPage() {
           <span className="inline-block h-1.5 w-1.5 rounded-full bg-coral-glow" />
           06 — Achievements
         </span>
-        <h1 className="font-display text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
-          Evidence, <span className="text-gradient-warm">not claims.</span>
-        </h1>
+        <AnimatedHeading
+          text="Evidence, not claims."
+          accent="not claims."
+          accentClass="text-gradient-warm italic"
+          className="font-display text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl"
+        />
         <p className="max-w-2xl text-muted-foreground">
           Scholarship medals, formal certifications, and the leadership &
           sport record that rounds out the profile.
@@ -91,7 +95,7 @@ export default function AchievementsPage() {
                 const Icon = getIcon(item.icon);
                 return (
                   <StaggerItem key={item.id}>
-                    <div className="group relative h-full overflow-hidden rounded-2xl border border-border/60 bg-card/40 p-5 backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-border shimmer-border">
+                    <div className="group relative h-full overflow-hidden rounded-2xl border border-border/60 bg-card/88 p-5 backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-border shimmer-border">
                       <div
                         className="absolute -right-12 -top-12 h-24 w-24 rounded-full opacity-15 blur-2xl transition-opacity group-hover:opacity-30"
                         style={{ background: sec.color }}
@@ -135,7 +139,7 @@ export default function AchievementsPage() {
       </div>
 
       {/* closing CTA */}
-      <div className="mt-16 flex flex-col items-center gap-4 rounded-3xl border border-border/60 bg-card/40 p-8 text-center">
+      <div className="mt-16 flex flex-col items-center gap-4 rounded-3xl border border-border/60 bg-card/88 p-8 text-center">
         <h3 className="font-display text-2xl font-semibold tracking-tight">
           The next achievement is in progress.
         </h3>

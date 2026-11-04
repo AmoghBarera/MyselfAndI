@@ -43,7 +43,7 @@ export function Footer() {
                 <Link
                   key={l.href}
                   href={l.href}
-                  className="group inline-flex items-center gap-1 text-sm text-muted-foreground transition-colors hover:text-foreground"
+                  className="link-underline group inline-flex items-center gap-1 text-sm text-muted-foreground transition-colors hover:text-foreground"
                 >
                   {l.label}
                   <ArrowUpRight className="h-3 w-3 opacity-0 transition-opacity group-hover:opacity-100" />

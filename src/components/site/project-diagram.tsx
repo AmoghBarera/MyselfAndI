@@ -154,7 +154,7 @@ function Stack({ diagram, accentVar }: { diagram: ProjectDiagram; accentVar: str
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.4, delay: i * 0.08 }}
-          className="flex items-center gap-3 rounded-lg border border-border/60 bg-card/60 px-4 py-3"
+          className="flex items-center gap-3 rounded-lg border border-border/60 bg-card/92 px-4 py-3"
         >
           <span className="grid h-7 w-7 place-items-center rounded-md text-[11px] font-semibold text-foreground" style={{ background: accentVar, color: "var(--background)" }}>
             {i + 1}

@@ -17,7 +17,7 @@ export function Marquee({
   return (
     <div
       className={cn(
-        "group relative flex w-full overflow-hidden",
+        "marquee-pause group relative flex w-full overflow-hidden",
         "[mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]",
         className
       )}

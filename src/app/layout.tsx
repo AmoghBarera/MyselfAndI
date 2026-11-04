@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Space_Grotesk } from "next/font/google";
+import { Geist, Geist_Mono, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
 import { ThemeProvider } from "@/components/site/theme-provider";
@@ -19,10 +19,12 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const display = Space_Grotesk({
+const display = Playfair_Display({
   variable: "--font-display",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "500", "600", "700", "800", "900"],
+  style: ["normal", "italic"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -60,7 +62,7 @@ export default function RootLayout({
       >
         <ThemeProvider
           attribute="class"
-          defaultTheme="dark"
+          defaultTheme="light"
           enableSystem={false}
           disableTransitionOnChange
         >
@@ -68,7 +70,7 @@ export default function RootLayout({
           <ScrollProgress />
           <div className="flex min-h-screen flex-col">
             <Navbar />
-            <main className="flex-1 pt-20">{children}</main>
+            <main className="flex-1 pt-20 grain">{children}</main>
             <Footer />
           </div>
           <Toaster />

@@ -14,6 +14,7 @@ import { accent } from "@/lib/accent";
 import { getIcon } from "@/lib/icons";
 import { cn } from "@/lib/utils";
 import { Reveal, Stagger, StaggerItem, AnimatedCounter } from "@/components/animations/motion";
+import { AnimatedHeading } from "@/components/site/animated-heading";
 
 export default function SkillsPage() {
   const groups = dataService.getSkillGroups();
@@ -33,9 +34,11 @@ export default function SkillsPage() {
           <span className="inline-block h-1.5 w-1.5 rounded-full bg-teal-glow" />
           04 — Skills
         </span>
-        <h1 className="font-display text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
-          The full <span className="text-gradient-emerald">toolkit.</span>
-        </h1>
+        <AnimatedHeading
+          text="The full toolkit."
+          accent="toolkit."
+          className="font-display text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl"
+        />
         <p className="max-w-2xl text-muted-foreground">
           Self-reported exposure levels — not expert proficiency across the
           board. Honest about where the depth is and where it&apos;s still growing.
@@ -44,7 +47,7 @@ export default function SkillsPage() {
 
       {/* radar overview */}
       <Reveal className="mb-12 grid gap-6 lg:grid-cols-[1fr_1.2fr]">
-        <div className="rounded-3xl border border-border/60 bg-card/40 p-6 backdrop-blur">
+        <div className="rounded-3xl border border-border/60 bg-card/88 p-6 backdrop-blur">
           <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground/70">
             Coverage map
           </span>
@@ -63,7 +66,7 @@ export default function SkillsPage() {
               return (
                 <div
                   key={g.id}
-                  className="flex items-center justify-between rounded-xl border border-border/50 bg-background/40 p-3"
+                  className="flex items-center justify-between rounded-xl border border-border/50 bg-background/86 p-3"
                 >
                   <span className="flex items-center gap-2 text-sm">
                     <span
@@ -81,7 +84,7 @@ export default function SkillsPage() {
           </div>
         </div>
 
-        <div className="rounded-3xl border border-border/60 bg-card/40 p-6 backdrop-blur">
+        <div className="rounded-3xl border border-border/60 bg-card/88 p-6 backdrop-blur">
           <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground/70">
             Radar
           </span>
@@ -121,7 +124,7 @@ export default function SkillsPage() {
           const Icon = getIcon(g.icon);
           return (
             <StaggerItem key={g.id}>
-              <div className="group relative h-full overflow-hidden rounded-2xl border border-border/60 bg-card/40 p-5 backdrop-blur transition-colors hover:border-border">
+              <div className="group relative h-full overflow-hidden rounded-2xl border border-border/60 bg-card/88 p-5 backdrop-blur transition-colors hover:border-border">
                 <div
                   className="absolute -right-16 -top-16 h-32 w-32 rounded-full opacity-15 blur-3xl transition-opacity group-hover:opacity-30"
                   style={{ background: a.chartVar }}
@@ -162,7 +165,7 @@ export default function SkillsPage() {
       </Stagger>
 
       {/* disclaimer */}
-      <Reveal className="mt-8 rounded-xl border border-border/40 bg-background/30 p-4 text-center text-xs text-muted-foreground/70">
+      <Reveal className="mt-8 rounded-xl border border-border/40 bg-background/82 p-4 text-center text-xs text-muted-foreground/70">
         Exposure levels are self-reported. These should not all be read as
         expert-level proficiency — they reflect hands-on time and comfort.
       </Reveal>

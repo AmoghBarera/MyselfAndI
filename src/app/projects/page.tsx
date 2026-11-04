@@ -10,6 +10,7 @@ import { cn } from "@/lib/utils";
 import { Reveal, Stagger, StaggerItem, TiltCard } from "@/components/animations/motion";
 import { ProjectCard } from "@/components/site/project-card";
 import { DiagramView } from "@/components/site/project-diagram";
+import { AnimatedHeading } from "@/components/site/animated-heading";
 
 const FILTERS = [
   { id: "all", label: "All" },
@@ -36,9 +37,12 @@ export default function ProjectsPage() {
           <span className="inline-block h-1.5 w-1.5 rounded-full bg-coral-glow" />
           03 — Projects
         </span>
-        <h1 className="font-display text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
-          Things I&apos;ve designed, <span className="text-gradient-warm">built, and broken.</span>
-        </h1>
+        <AnimatedHeading
+          text="Things I've designed, built, and broken."
+          accent="broken."
+          accentClass="text-gradient-warm italic"
+          className="font-display text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl"
+        />
         <p className="max-w-2xl text-muted-foreground">
           From a Kafka-driven trade reconciliation engine to a daemon-less
           container runtime. Each project below has its own architecture
@@ -55,7 +59,7 @@ export default function ProjectsPage() {
             <Reveal key={p.id}>
               <section
                 id={p.slug}
-                className="relative scroll-mt-24 overflow-hidden rounded-3xl border border-border/60 bg-card/40 p-6 backdrop-blur sm:p-8 lg:p-10"
+                className="relative scroll-mt-24 overflow-hidden rounded-3xl border border-border/60 bg-card/88 p-6 backdrop-blur sm:p-8 lg:p-10"
               >
                 {/* accent wash */}
                 <div
@@ -102,7 +106,7 @@ export default function ProjectsPage() {
                       {p.metrics.map((m) => (
                         <div
                           key={m.label}
-                          className="rounded-xl border border-border/50 bg-background/40 p-3"
+                          className="rounded-xl border border-border/50 bg-background/86 p-3"
                         >
                           <div className="font-display text-base font-bold" style={{ color: a.chartVar }}>
                             {m.value}
@@ -149,7 +153,7 @@ export default function ProjectsPage() {
 
                   {/* diagram */}
                   <div className="flex flex-col gap-3">
-                    <TiltCard max={5} className="rounded-2xl border border-border/60 bg-background/50 p-5">
+                    <TiltCard max={5} className="rounded-2xl border border-border/60 bg-background/90 p-5">
                       <div className="flex items-center justify-between">
                         <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground/70">
                           {p.diagram?.title ?? "Architecture"}
@@ -187,7 +191,7 @@ export default function ProjectsPage() {
               Every project, filterable.
             </h2>
           </div>
-          <div className="flex items-center gap-1.5 rounded-xl border border-border/60 bg-card/40 p-1">
+          <div className="flex items-center gap-1.5 rounded-xl border border-border/60 bg-card/88 p-1">
             <Filter className="ml-2 h-3.5 w-3.5 text-muted-foreground/60" />
             {FILTERS.map((f) => (
               <button
@@ -234,7 +238,7 @@ export default function ProjectsPage() {
       </div>
 
       {/* CTA */}
-      <div className="mt-20 flex flex-col items-center gap-4 rounded-3xl border border-border/60 bg-card/40 p-8 text-center">
+      <div className="mt-20 flex flex-col items-center gap-4 rounded-3xl border border-border/60 bg-card/88 p-8 text-center">
         <h3 className="font-display text-2xl font-semibold tracking-tight">
           Want the technical deep dive?
         </h3>

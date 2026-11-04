@@ -21,7 +21,7 @@ export function ProjectCard({
     <Link
       href={`/projects#${project.slug}`}
       className={cn(
-        "group relative block overflow-hidden rounded-2xl border border-border/60 bg-card/70 p-5 transition-all duration-300 hover:-translate-y-1 hover:border-border shimmer-border",
+        "group relative block overflow-hidden rounded-2xl border border-border/60 bg-card/94 p-5 transition-all duration-300 hover:-translate-y-1 hover:border-border shimmer-border",
         className
       )}
     >

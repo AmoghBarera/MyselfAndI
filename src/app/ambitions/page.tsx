@@ -7,6 +7,7 @@ import { dataService } from "@/lib/data-service";
 import { accent } from "@/lib/accent";
 import { cn } from "@/lib/utils";
 import { Reveal, Stagger, StaggerItem } from "@/components/animations/motion";
+import { AnimatedHeading } from "@/components/site/animated-heading";
 
 export default function AmbitionsPage() {
   const phases = dataService.getAmbitions();
@@ -20,9 +21,12 @@ export default function AmbitionsPage() {
           <span className="inline-block h-1.5 w-1.5 rounded-full bg-amber-glow" />
           05 — Ambitions
         </span>
-        <h1 className="font-display text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
-          The trajectory, <span className="text-gradient-warm">not the resume.</span>
-        </h1>
+        <AnimatedHeading
+          text="The trajectory, not the resume."
+          accent="not the resume."
+          accentClass="text-gradient-warm italic"
+          className="font-display text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl"
+        />
         <p className="max-w-2xl text-muted-foreground">
           A three-phase plan: land a strong software engineering role, pivot
           into quantitative finance, then build at the intersection of tech,
@@ -31,7 +35,7 @@ export default function AmbitionsPage() {
       </div>
 
       {/* trajectory curve */}
-      <Reveal className="mb-12 overflow-hidden rounded-3xl border border-border/60 bg-card/40 p-6 backdrop-blur">
+      <Reveal className="mb-12 overflow-hidden rounded-3xl border border-border/60 bg-card/88 p-6 backdrop-blur">
         <div className="flex items-center justify-between">
           <div>
             <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground/70">
@@ -52,7 +56,7 @@ export default function AmbitionsPage() {
           const a = accent(phase.color);
           return (
             <Reveal key={phase.id} delay={i * 0.1}>
-              <div className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-border/60 bg-card/40 p-6 backdrop-blur">
+              <div className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-border/60 bg-card/88 p-6 backdrop-blur">
                 <div
                   className="absolute -right-16 -top-16 h-32 w-32 rounded-full opacity-20 blur-3xl transition-opacity group-hover:opacity-35"
                   style={{ background: a.chartVar }}
@@ -117,7 +121,7 @@ export default function AmbitionsPage() {
 
       {/* quant direction */}
       <Reveal className="mt-16">
-        <div className="relative overflow-hidden rounded-3xl border border-border/60 bg-card/40 p-6 backdrop-blur sm:p-8">
+        <div className="relative overflow-hidden rounded-3xl border border-border/60 bg-card/88 p-6 backdrop-blur sm:p-8">
           <div className="absolute -left-20 -top-20 h-48 w-48 rounded-full bg-emerald-glow/15 blur-3xl" />
           <div className="relative flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
             <div className="flex max-w-md flex-col gap-3">
@@ -140,7 +144,7 @@ export default function AmbitionsPage() {
             >
               {quantDirs.map((d) => (
                 <StaggerItem key={d}>
-                  <div className="flex items-center gap-2 rounded-xl border border-border/50 bg-background/40 p-3">
+                  <div className="flex items-center gap-2 rounded-xl border border-border/50 bg-background/86 p-3">
                     <Target className="h-4 w-4 text-emerald-glow" />
                     <span className="text-sm">{d}</span>
                   </div>

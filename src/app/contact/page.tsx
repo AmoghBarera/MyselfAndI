@@ -11,6 +11,7 @@ import { dataService } from "@/lib/data-service";
 import { getIcon } from "@/lib/icons";
 import { cn } from "@/lib/utils";
 import { Reveal } from "@/components/animations/motion";
+import { AnimatedHeading } from "@/components/site/animated-heading";
 
 const schema = z.object({
   name: z.string().min(2, "Tell me who you are"),
@@ -67,9 +68,11 @@ export default function ContactPage() {
           <span className="inline-block h-1.5 w-1.5 rounded-full bg-emerald-glow" />
           07 — Contact
         </span>
-        <h1 className="font-display text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
-          Let&apos;s build <span className="text-gradient-emerald">something.</span>
-        </h1>
+        <AnimatedHeading
+          text="Let's build something."
+          accent="something."
+          className="font-display text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl"
+        />
         <p className="max-w-2xl text-muted-foreground">
           Open to full-time SWE roles, quant internships, and collaborations.
           Email and phone are shared on request — drop a note below and
@@ -80,7 +83,7 @@ export default function ContactPage() {
       <div className="grid gap-8 lg:grid-cols-[1fr_1.2fr]">
         {/* channels */}
         <Reveal className="flex flex-col gap-4">
-          <div className="rounded-2xl border border-border/60 bg-card/40 p-6 backdrop-blur">
+          <div className="rounded-2xl border border-border/60 bg-card/88 p-6 backdrop-blur">
             <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground/70">
               Channels
             </span>
@@ -91,7 +94,7 @@ export default function ContactPage() {
                 return (
                   <div
                     key={c.id}
-                    className="group flex items-center justify-between gap-3 rounded-xl border border-border/50 bg-background/40 p-3"
+                    className="group flex items-center justify-between gap-3 rounded-xl border border-border/50 bg-background/86 p-3"
                   >
                     <div className="flex items-center gap-3">
                       <span className="grid h-9 w-9 place-items-center rounded-lg border border-border/50 text-muted-foreground transition-colors group-hover:text-foreground">
@@ -121,7 +124,7 @@ export default function ContactPage() {
             </div>
           </div>
 
-          <div className="rounded-2xl border border-border/60 bg-card/40 p-6 backdrop-blur">
+          <div className="rounded-2xl border border-border/60 bg-card/88 p-6 backdrop-blur">
             <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground/70">
               Based in
             </span>
@@ -148,7 +151,7 @@ export default function ContactPage() {
 
         {/* form */}
         <Reveal delay={0.1} className="flex flex-col">
-          <div className="relative overflow-hidden rounded-2xl border border-border/60 bg-card/40 p-6 backdrop-blur sm:p-8">
+          <div className="relative overflow-hidden rounded-2xl border border-border/60 bg-card/88 p-6 backdrop-blur sm:p-8">
             <div className="absolute -right-16 -top-16 h-40 w-40 rounded-full bg-emerald-glow/15 blur-3xl" />
             <AnimatePresence mode="wait">
               {submitted ? (
@@ -191,7 +194,7 @@ export default function ContactPage() {
                       <input
                         {...register("name")}
                         placeholder="Jane Doe"
-                        className="w-full rounded-lg border border-border/60 bg-background/50 px-3 py-2.5 text-sm outline-none transition-colors focus:border-emerald-glow/50"
+                        className="w-full rounded-lg border border-border/60 bg-background/90 px-3 py-2.5 text-sm outline-none transition-colors focus:border-emerald-glow/50"
                       />
                     </Field>
                     <Field label="Email" error={errors.email?.message}>
@@ -199,7 +202,7 @@ export default function ContactPage() {
                         {...register("email")}
                         type="email"
                         placeholder="jane@company.com"
-                        className="w-full rounded-lg border border-border/60 bg-background/50 px-3 py-2.5 text-sm outline-none transition-colors focus:border-emerald-glow/50"
+                        className="w-full rounded-lg border border-border/60 bg-background/90 px-3 py-2.5 text-sm outline-none transition-colors focus:border-emerald-glow/50"
                       />
                     </Field>
                   </div>
@@ -207,7 +210,7 @@ export default function ContactPage() {
                     <input
                       {...register("subject")}
                       placeholder="An opportunity, a collaboration, a question"
-                      className="w-full rounded-lg border border-border/60 bg-background/50 px-3 py-2.5 text-sm outline-none transition-colors focus:border-emerald-glow/50"
+                      className="w-full rounded-lg border border-border/60 bg-background/90 px-3 py-2.5 text-sm outline-none transition-colors focus:border-emerald-glow/50"
                     />
                   </Field>
                   <Field label="Message" error={errors.message?.message}>
@@ -215,7 +218,7 @@ export default function ContactPage() {
                       {...register("message")}
                       rows={5}
                       placeholder="Tell me what you're working on, or what you'd like to discuss."
-                      className="w-full resize-none rounded-lg border border-border/60 bg-background/50 px-3 py-2.5 text-sm outline-none transition-colors focus:border-emerald-glow/50"
+                      className="w-full resize-none rounded-lg border border-border/60 bg-background/90 px-3 py-2.5 text-sm outline-none transition-colors focus:border-emerald-glow/50"
                     />
                   </Field>
 

@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import { profile } from "@/data/profile";
 import { SectionHeading } from "@/components/site/section-heading";
+import { AnimatedHeading } from "@/components/site/animated-heading";
 import { Reveal, AnimatedCounter } from "@/components/animations/motion";
 
 const QUICK_FACTS = [
@@ -43,15 +44,17 @@ export default function AboutPage() {
           <span className="inline-block h-1.5 w-1.5 rounded-full bg-emerald-glow" />
           01 — About
         </span>
-        <h1 className="font-display text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
-          The person behind <span className="text-gradient-emerald">the projects.</span>
-        </h1>
+        <AnimatedHeading
+          text="The person behind the projects."
+          accent="the projects."
+          className="font-display text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl"
+        />
       </div>
 
       <div className="grid gap-8 lg:grid-cols-[1.4fr_1fr]">
         {/* summary */}
         <Reveal className="flex flex-col gap-6">
-          <div className="rounded-2xl border border-border/60 bg-card/50 p-6 backdrop-blur">
+          <div className="rounded-2xl border border-border/60 bg-card/90 p-6 backdrop-blur">
             <p className="text-lg leading-relaxed text-foreground/90">
               {profile.summary}
             </p>
@@ -60,7 +63,7 @@ export default function AboutPage() {
           <div className="grid gap-3 sm:grid-cols-2">
             {QUICK_FACTS.map((f, i) => (
               <Reveal key={f.label} delay={i * 0.06}>
-                <div className="flex items-center gap-3 rounded-xl border border-border/50 bg-card/40 p-4">
+                <div className="flex items-center gap-3 rounded-xl border border-border/50 bg-card/88 p-4">
                   <span className="grid h-9 w-9 place-items-center rounded-lg border border-border/50 text-emerald-glow">
                     <f.icon className="h-4 w-4" />
                   </span>
@@ -78,7 +81,7 @@ export default function AboutPage() {
 
         {/* CGPA gauge */}
         <Reveal delay={0.15} className="flex flex-col gap-4">
-          <div className="relative overflow-hidden rounded-2xl border border-border/60 bg-card/50 p-6">
+          <div className="relative overflow-hidden rounded-2xl border border-border/60 bg-card/90 p-6">
             <div className="absolute -right-16 -top-16 h-40 w-40 rounded-full bg-emerald-glow/20 blur-3xl" />
             <div className="relative flex flex-col items-center gap-4">
               <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground/70">
@@ -94,7 +97,7 @@ export default function AboutPage() {
             </div>
           </div>
 
-          <div className="rounded-2xl border border-border/60 bg-card/50 p-5">
+          <div className="rounded-2xl border border-border/60 bg-card/90 p-5">
             <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground/70">
               Currently available for
             </span>
@@ -124,7 +127,7 @@ export default function AboutPage() {
         <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {INTERESTS.map((it, i) => (
             <Reveal key={it.label} delay={i * 0.05}>
-              <div className="group flex items-center gap-3 rounded-xl border border-border/50 bg-card/40 p-4 transition-colors hover:border-amber-glow/30">
+              <div className="group flex items-center gap-3 rounded-xl border border-border/50 bg-card/88 p-4 transition-colors hover:border-amber-glow/30">
                 <span className="grid h-9 w-9 place-items-center rounded-lg border border-border/50 text-amber-glow transition-transform group-hover:scale-110">
                   <it.icon className="h-4 w-4" />
                 </span>
@@ -144,7 +147,7 @@ export default function AboutPage() {
           <Link
             key={n.href}
             href={n.href}
-            className="group flex items-center justify-between rounded-2xl border border-border/60 bg-card/40 p-5 transition-colors hover:border-emerald-glow/40"
+            className="group flex items-center justify-between rounded-2xl border border-border/60 bg-card/88 p-5 transition-colors hover:border-emerald-glow/40"
           >
             <div className="flex items-center gap-3">
               <span className="font-mono text-xs text-muted-foreground/60">{n.num}</span>

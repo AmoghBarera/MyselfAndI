@@ -67,7 +67,7 @@ export default function HomePage() {
         <motion.div style={{ y: heroY, opacity: heroOpacity }} className="flex flex-col gap-6">
           {/* availability badge */}
           <Reveal>
-            <span className="inline-flex w-fit items-center gap-2 rounded-full border border-border/60 bg-card/60 px-3 py-1.5 text-xs text-muted-foreground backdrop-blur">
+            <span className="inline-flex w-fit items-center gap-2 rounded-full border border-border/60 bg-card/92 px-3 py-1.5 text-xs text-muted-foreground backdrop-blur">
               <span className="relative flex h-2 w-2">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-glow opacity-60" />
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-glow" />
@@ -109,7 +109,7 @@ export default function HomePage() {
             <Magnetic strength={0.3}>
               <Link
                 href="/about"
-                className="inline-flex items-center gap-2 rounded-xl border border-border/70 bg-card/40 px-5 py-3 text-sm font-medium backdrop-blur transition-colors hover:border-emerald-glow/40"
+                className="inline-flex items-center gap-2 rounded-xl border border-border/70 bg-card/88 px-5 py-3 text-sm font-medium backdrop-blur transition-colors hover:border-emerald-glow/40"
               >
                 About me
               </Link>
@@ -121,7 +121,7 @@ export default function HomePage() {
             {heroStats.map((s) => (
               <div
                 key={s.label}
-                className="group relative overflow-hidden rounded-xl border border-border/60 bg-card/50 p-4 backdrop-blur"
+                className="group relative overflow-hidden rounded-xl border border-border/60 bg-card/90 p-4 backdrop-blur"
               >
                 <div className="absolute inset-x-0 top-0 h-0.5 origin-left scale-x-0 bg-gradient-to-r from-emerald-glow to-amber-glow transition-transform duration-500 group-hover:scale-x-100" />
                 <div className="font-display text-2xl font-bold tracking-tight sm:text-3xl">
@@ -154,7 +154,7 @@ export default function HomePage() {
       </section>
 
       {/* ─────────── TECH MARQUEE ─────────── */}
-      <section className="relative border-y border-border/40 bg-card/20 py-5">
+      <section className="relative border-y border-border/40 bg-card/70 py-5">
         <Marquee duration={42}>
           {TECH_MARQUEE.map((t) => (
             <span
@@ -187,7 +187,7 @@ export default function HomePage() {
           <div className="grid gap-4 sm:grid-cols-3">
             {PILLARS.map((p, i) => (
               <Reveal key={p.title} delay={i * 0.1}>
-                <div className="group relative h-full overflow-hidden rounded-2xl border border-border/60 bg-card/50 p-5">
+                <div className="group relative h-full overflow-hidden rounded-2xl border border-border/60 bg-card/90 p-5">
                   <div
                     className="absolute -right-12 -top-12 h-28 w-28 rounded-full opacity-20 blur-2xl transition-opacity group-hover:opacity-40"
                     style={{ background: p.color }}
@@ -286,7 +286,7 @@ function NameReveal({ name }: { name: string }) {
             }}
           >
             {wi === 0 ? (
-              <span className="text-gradient-emerald">{word}</span>
+              <span className="text-gradient-emerald italic">{word}</span>
             ) : (
               word
             )}

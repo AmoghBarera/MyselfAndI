@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import { dataService } from "@/lib/data-service";
 import { Reveal } from "@/components/animations/motion";
+import { AnimatedHeading } from "@/components/site/animated-heading";
 
 const META = [
   { icon: Building2, label: "Team", key: "team" as const },
@@ -32,15 +33,18 @@ export default function ExperiencePage() {
           <span className="inline-block h-1.5 w-1.5 rounded-full bg-amber-glow" />
           02 — Experience
         </span>
-        <h1 className="font-display text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
-          Where I&apos;ve earned <span className="text-gradient-warm">the reps.</span>
-        </h1>
+        <AnimatedHeading
+          text="Where I've earned the reps."
+          accent="the reps."
+          accentClass="text-gradient-warm italic"
+          className="font-display text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl"
+        />
       </div>
 
       <div className="flex flex-col gap-10">
         {experiences.map((exp) => (
           <Reveal key={exp.id}>
-            <article className="relative overflow-hidden rounded-3xl border border-border/60 bg-card/50 p-6 backdrop-blur sm:p-8">
+            <article className="relative overflow-hidden rounded-3xl border border-border/60 bg-card/90 p-6 backdrop-blur sm:p-8">
               {/* accent wash */}
               <div className="absolute -right-20 -top-20 h-60 w-60 rounded-full bg-amber-glow/10 blur-3xl" />
               <div className="absolute -left-20 bottom-0 h-40 w-40 rounded-full bg-emerald-glow/10 blur-3xl" />
@@ -73,7 +77,7 @@ export default function ExperiencePage() {
                 {META.map((m) => (
                   <div
                     key={m.label}
-                    className="flex items-center gap-3 rounded-xl border border-border/50 bg-background/40 p-3"
+                    className="flex items-center gap-3 rounded-xl border border-border/50 bg-background/86 p-3"
                   >
                     <span className="grid h-8 w-8 place-items-center rounded-lg border border-border/50 text-amber-glow">
                       <m.icon className="h-4 w-4" />
@@ -178,7 +182,7 @@ export default function ExperiencePage() {
           <Link
             key={n.href}
             href={n.href}
-            className="group flex items-center justify-between rounded-2xl border border-border/60 bg-card/40 p-5 transition-colors hover:border-amber-glow/40"
+            className="group flex items-center justify-between rounded-2xl border border-border/60 bg-card/88 p-5 transition-colors hover:border-amber-glow/40"
           >
             <div className="flex items-center gap-3">
               <span className="font-mono text-xs text-muted-foreground/60">{n.num}</span>
@@ -214,7 +218,7 @@ function WorkFlowDiagram() {
             transition={{ duration: 0.4, delay: i * 0.1 }}
             className="flex flex-1 items-center"
           >
-            <div className="relative flex flex-1 flex-col items-center gap-2 rounded-xl border border-border/50 bg-background/40 p-4 text-center">
+            <div className="relative flex flex-1 flex-col items-center gap-2 rounded-xl border border-border/50 bg-background/86 p-4 text-center">
               <span className="font-mono text-[10px] text-muted-foreground/50">
                 {String(i + 1).padStart(2, "0")}
               </span>
