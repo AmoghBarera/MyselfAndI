@@ -91,18 +91,16 @@ export default function ContactPage() {
               {channels.map((c) => {
                 const Icon = getIcon(c.icon);
                 const meta = STATUS_META[c.status];
-                return (
-                  <div
-                    key={c.id}
-                    className="group flex items-center justify-between gap-3 rounded-xl border border-border/50 bg-background/86 p-3"
-                  >
+                const isLink = c.value.startsWith("http");
+                const inner = (
+                  <>
                     <div className="flex items-center gap-3">
                       <span className="grid h-9 w-9 place-items-center rounded-lg border border-border/50 text-muted-foreground transition-colors group-hover:text-foreground">
                         <Icon className="h-4 w-4" />
                       </span>
                       <div className="flex flex-col">
                         <span className="text-sm font-medium">{c.label}</span>
-                        <span className="text-xs text-muted-foreground">{c.value}</span>
+                        <span className="text-xs text-muted-foreground line-clamp-1">{c.value}</span>
                       </div>
                     </div>
                     <span
@@ -118,6 +116,25 @@ export default function ContactPage() {
                       />
                       {meta.label}
                     </span>
+                  </>
+                );
+
+                return isLink ? (
+                  <a
+                    key={c.id}
+                    href={c.value}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group flex items-center justify-between gap-3 rounded-xl border border-border/50 bg-background/86 p-3 transition-colors hover:border-emerald-glow/40 hover:bg-card"
+                  >
+                    {inner}
+                  </a>
+                ) : (
+                  <div
+                    key={c.id}
+                    className="group flex items-center justify-between gap-3 rounded-xl border border-border/50 bg-background/86 p-3"
+                  >
+                    {inner}
                   </div>
                 );
               })}

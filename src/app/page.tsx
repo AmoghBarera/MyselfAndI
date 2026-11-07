@@ -28,7 +28,7 @@ const PILLARS = [
   {
     icon: Cpu,
     title: "Systems & Software Engineering",
-    body: "From daemon-less container runtimes in Python to enterprise API integrations at Schneider Electric — building things that actually run.",
+    body: "From daemon-less container runtimes in Python to enterprise systems at Schneider Electric and incoming engineering at Goldman Sachs — building things that actually run.",
     color: "var(--emerald-glow)",
   },
   {

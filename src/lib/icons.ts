@@ -20,6 +20,11 @@ import {
   Github,
   Globe,
   MapPin,
+  Cloud,
+  Sparkles,
+  Cpu,
+  Briefcase,
+  Building2,
   type LucideIcon,
 } from "lucide-react";
 
@@ -47,6 +52,11 @@ export const iconMap: Record<string, LucideIcon> = {
   Github,
   Globe,
   MapPin,
+  Cloud,
+  Sparkles,
+  Cpu,
+  Briefcase,
+  Building2,
 };
 
 export function getIcon(name: string): LucideIcon {

@@ -70,6 +70,16 @@ export default function ExperiencePage() {
                     </span>
                   </div>
                 </div>
+
+                {exp.isUpcoming && (
+                  <span className="inline-flex w-fit items-center gap-2 rounded-full border border-emerald-glow/40 bg-emerald-glow/10 px-3 py-1 text-xs font-medium text-foreground">
+                    <span className="relative flex h-2 w-2">
+                      <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-glow opacity-75" />
+                      <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-glow" />
+                    </span>
+                    Upcoming · January 2027
+                  </span>
+                )}
               </div>
 
               {/* meta grid */}
@@ -103,17 +113,17 @@ export default function ExperiencePage() {
               <div className="relative mt-8">
                 <span className="inline-flex items-center gap-2 text-xs font-medium uppercase tracking-[0.22em] text-muted-foreground">
                   <span className="inline-block h-1.5 w-1.5 rounded-full bg-amber-glow" />
-                  The work, end to end
+                  {exp.isUpcoming ? "Preparation & Transition Pipeline" : "The work, end to end"}
                 </span>
                 <div className="mt-4">
-                  <WorkFlowDiagram />
+                  {exp.id === "goldman-sachs" ? <GoldmanFlowDiagram /> : <WorkFlowDiagram />}
                 </div>
               </div>
 
               {/* highlights timeline */}
               <div className="relative mt-8">
                 <h3 className="font-display text-lg font-semibold">
-                  What I shipped
+                  {exp.isUpcoming ? "Key Focus Areas & Milestones" : "What I shipped"}
                 </h3>
                 <div className="mt-4 flex flex-col">
                   {exp.highlights.map((h, i) => (
@@ -161,7 +171,7 @@ export default function ExperiencePage() {
                 <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-emerald-glow" />
                 <div>
                   <span className="text-xs font-medium uppercase tracking-[0.2em] text-emerald-glow">
-                    Takeaway
+                    {exp.isUpcoming ? "Milestone Significance" : "Takeaway"}
                   </span>
                   <p className="mt-1 text-sm leading-relaxed text-foreground/90">
                     {exp.outcome}
@@ -238,6 +248,58 @@ function WorkFlowDiagram() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: i * 0.1 + 0.1 }}
                   className="h-0.5 w-full origin-left bg-gradient-to-r from-amber-glow/60 to-emerald-glow/60"
+                />
+                <GitBranch className="absolute h-3 w-3 text-muted-foreground/60" />
+              </div>
+            )}
+          </motion.div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+/* Horizontal pipeline showing the incoming Goldman Sachs milestone */
+function GoldmanFlowDiagram() {
+  const stages = [
+    { label: "Offer Secured", sub: "Incoming Jan 2027" },
+    { label: "Financial Systems", sub: "Enterprise scale" },
+    { label: "Distributed Infra", sub: "High throughput" },
+    { label: "Institutional Prep", sub: "Trading tech" },
+    { label: "Quant Synergy", sub: "Trajectory anchor" },
+  ];
+  return (
+    <div className="overflow-x-auto scrollbar-slim">
+      <div className="flex min-w-[640px] items-stretch gap-0">
+        {stages.map((s, i) => (
+          <motion.div
+            key={s.label}
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4, delay: i * 0.1 }}
+            className="flex flex-1 items-center"
+          >
+            <div className="relative flex flex-1 flex-col items-center gap-2 rounded-xl border border-border/50 bg-background/86 p-4 text-center">
+              <span className="font-mono text-[10px] text-muted-foreground/50">
+                {String(i + 1).padStart(2, "0")}
+              </span>
+              <span className="font-display text-sm font-semibold">{s.label}</span>
+              <span className="text-[10px] text-muted-foreground/70">{s.sub}</span>
+              {i === 0 && (
+                <span className="absolute -right-1 -top-2 rounded-full bg-emerald-glow px-1.5 py-0.5 text-[9px] font-medium text-background">
+                  accepted
+                </span>
+              )}
+            </div>
+            {i < stages.length - 1 && (
+              <div className="relative flex h-10 w-8 items-center justify-center">
+                <motion.span
+                  initial={{ scaleX: 0 }}
+                  whileInView={{ scaleX: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: i * 0.1 + 0.1 }}
+                  className="h-0.5 w-full origin-left bg-gradient-to-r from-emerald-glow/60 to-amber-glow/60"
                 />
                 <GitBranch className="absolute h-3 w-3 text-muted-foreground/60" />
               </div>

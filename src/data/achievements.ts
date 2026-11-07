@@ -16,7 +16,7 @@ export const academicAchievements: Achievement[] = [
   {
     id: "cgpa",
     category: "Academic",
-    title: "CGPA 7.98 / 10",
+    title: "CGPA 8.14 / 10",
     description: "Strong academic standing in the B.Tech AIML programme.",
     icon: "GraduationCap",
   },
@@ -38,6 +38,42 @@ export const certifications: Achievement[] = [
     description:
       "Foundational risk-management certification from NYIF — grounding for the quant finance transition.",
     icon: "ShieldCheck",
+  },
+  {
+    id: "aws-ai-fundamentals",
+    category: "Certification",
+    title: "AWS: AI Fundamentals and the Cloud",
+    issuer: "Amazon Web Services · Coursera",
+    description:
+      "Foundational certification covering artificial intelligence, machine learning, and cloud infrastructure on AWS.",
+    icon: "Cloud",
+  },
+  {
+    id: "aws-ideas-to-life",
+    category: "Certification",
+    title: "AWS: Bringing Ideas to Life Using AI",
+    issuer: "Amazon Web Services · Coursera",
+    description:
+      "Hands-on certification applying generative AI and AWS intelligence capabilities to create real-world solutions.",
+    icon: "Sparkles",
+  },
+  {
+    id: "aws-generative-ai-pro",
+    category: "Certification",
+    title: "AWS Professional: Generative AI",
+    issuer: "Amazon Web Services · Coursera",
+    description:
+      "Advanced professional certification in generative AI concepts, foundation models, and cloud-native AI engineering on AWS.",
+    icon: "BrainCircuit",
+  },
+  {
+    id: "aws-services-ai-solutions",
+    category: "Certification",
+    title: "AWS Services for AI Solutions",
+    issuer: "Amazon Web Services · Coursera",
+    description:
+      "Deep dive into specialized AWS AI services, deployment pipelines, and scalable cloud AI architecture.",
+    icon: "ServerCog",
   },
 ];
 

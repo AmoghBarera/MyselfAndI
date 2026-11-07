@@ -24,15 +24,15 @@ export const contactChannels: ContactChannel[] = [
   {
     id: "linkedin",
     label: "LinkedIn",
-    value: "Not yet published",
-    status: "unavailable",
+    value: "https://www.linkedin.com/in/amogh-barera-0b1056317/",
+    status: "available",
     icon: "Linkedin",
   },
   {
     id: "github",
     label: "GitHub",
-    value: "Not yet published",
-    status: "unavailable",
+    value: "https://github.com/AmoghBarera",
+    status: "available",
     icon: "Github",
   },
   {

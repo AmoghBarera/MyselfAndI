@@ -127,7 +127,7 @@ export function AnimatedCounter({
   return (
     <span ref={ref} className={cn("tabular-nums", className)}>
       {prefix}
-      {(0).toFixed(decimals)}
+      {value.toFixed(decimals)}
       {suffix}
     </span>
   );

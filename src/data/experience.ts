@@ -6,13 +6,42 @@ import type { ExperienceItem } from "./types";
 
 export const experiences: ExperienceItem[] = [
   {
+    id: "goldman-sachs",
+    company: "Goldman Sachs",
+    role: "Engineering Intern (Incoming)",
+    team: "Engineering Division",
+    location: "Bengaluru, India",
+    type: "Upcoming Internship",
+    duration: "Starting January 2027",
+    stipend: "Competitive",
+    logoText: "GS",
+    isUpcoming: true,
+    summary:
+      "Selected for an upcoming internship at Goldman Sachs starting January 2027. Stepping into premier institutional financial engineering at the intersection of high-throughput distributed systems and quantitative financial technology.",
+    highlights: [
+      "Secured incoming engineering internship offer starting January 2027.",
+      "Will work on enterprise-grade distributed systems and financial market infrastructure.",
+      "Direct milestone aligning core software engineering with the quantitative finance roadmap.",
+      "Leveraging hands-on expertise in algorithmic problem-solving, systems design, and financial trade workflows.",
+    ],
+    outcome:
+      "A defining career milestone bridging scalable software engineering with institutional financial markets and quantitative systems.",
+    skills: [
+      "Financial Systems",
+      "Software Engineering",
+      "Distributed Systems",
+      "Quantitative Finance",
+      "Algorithms & Data Structures",
+    ],
+  },
+  {
     id: "schneider-gsc",
     company: "Schneider Electric",
     role: "Software Engineering Intern",
     team: "Global Supply Chain (GSC)",
     location: "Bengaluru, India",
-    type: "6-month internship",
-    duration: "2024 — 2025",
+    type: "3-month internship",
+    duration: "June 2026 - September 2026",
     stipend: "₹35,000 / month",
     logoText: "SE",
     summary:

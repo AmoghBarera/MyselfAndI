@@ -11,6 +11,9 @@ import {
   Languages,
   Heart,
   Bike,
+  Briefcase,
+  Linkedin,
+  Github,
 } from "lucide-react";
 import { profile } from "@/data/profile";
 import { SectionHeading } from "@/components/site/section-heading";
@@ -20,7 +23,7 @@ import { Reveal, AnimatedCounter } from "@/components/animations/motion";
 const QUICK_FACTS = [
   { icon: MapPin, label: "Based in", value: "Bengaluru, India" },
   { icon: GraduationCap, label: "Studying", value: "B.Tech · AIML" },
-  { icon: Calendar, label: "Status", value: "6th Semester" },
+  { icon: Briefcase, label: "Next up", value: "Goldman Sachs (Jan '27)" },
   { icon: Languages, label: "Code in", value: "Python · JS · Java · C" },
 ];
 
@@ -76,6 +79,53 @@ export default function AboutPage() {
                 </div>
               </Reveal>
             ))}
+          </div>
+
+          {/* Social Profiles */}
+          <div className="grid gap-3 sm:grid-cols-2">
+            <Reveal delay={0.24}>
+              <a
+                href={profile.linkedin ?? "https://www.linkedin.com/in/amogh-barera-0b1056317/"}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center justify-between rounded-xl border border-border/50 bg-card/88 p-4 transition-all duration-200 hover:-translate-y-0.5 hover:border-emerald-glow/50 hover:bg-card"
+              >
+                <div className="flex items-center gap-3">
+                  <span className="grid h-9 w-9 place-items-center rounded-lg border border-border/50 text-emerald-glow transition-transform group-hover:scale-110">
+                    <Linkedin className="h-4 w-4" />
+                  </span>
+                  <div className="flex flex-col">
+                    <span className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground/70">
+                      Network
+                    </span>
+                    <span className="text-sm font-medium">LinkedIn Profile</span>
+                  </div>
+                </div>
+                <ArrowUpRight className="h-4 w-4 text-muted-foreground transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-foreground" />
+              </a>
+            </Reveal>
+
+            <Reveal delay={0.3}>
+              <a
+                href={profile.github ?? "https://github.com/AmoghBarera"}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center justify-between rounded-xl border border-border/50 bg-card/88 p-4 transition-all duration-200 hover:-translate-y-0.5 hover:border-amber-glow/50 hover:bg-card"
+              >
+                <div className="flex items-center gap-3">
+                  <span className="grid h-9 w-9 place-items-center rounded-lg border border-border/50 text-amber-glow transition-transform group-hover:scale-110">
+                    <Github className="h-4 w-4" />
+                  </span>
+                  <div className="flex flex-col">
+                    <span className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground/70">
+                      Repositories
+                    </span>
+                    <span className="text-sm font-medium">GitHub Profile</span>
+                  </div>
+                </div>
+                <ArrowUpRight className="h-4 w-4 text-muted-foreground transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-foreground" />
+              </a>
+            </Reveal>
           </div>
         </Reveal>
 

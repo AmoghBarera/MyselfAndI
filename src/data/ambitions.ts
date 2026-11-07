@@ -13,11 +13,11 @@ export const ambitions: AmbitionPhase[] = [
     color: "emerald",
     focus: "Land a strong full-time software engineering role.",
     goals: [
-      "Secure a strong full-time placement.",
-      "Target product-based technology companies.",
+      "Incoming Intern at Goldman Sachs (starting January 2027).",
+      "Secure a strong full-time placement in product tech and premier financial institutions.",
       "Aim for compensation above ₹20 LPA.",
-      "Build a strong software engineering foundation.",
-      "Leverage the Schneider Electric internship experience.",
+      "Build a strong software engineering and distributed systems foundation.",
+      "Leverage engineering internships at Goldman Sachs and Schneider Electric.",
     ],
   },
   {
